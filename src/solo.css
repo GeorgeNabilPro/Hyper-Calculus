@@ -1,0 +1,40 @@
+
+#main-title{
+    background-image: url(./assets/3797699.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding:20px;
+    height: fit-content;
+    position: relative;
+}
+#main-title h1{
+    display: block;
+    font-size: 60px;
+    color:aliceblue;
+    font-family: Recoleta;
+}
+#main-title h3{
+    font-size: 28px;
+    color:aliceblue;
+    font-family: Recoleta;
+    margin-bottom: 15px;
+}
+#main-title h2{
+    display: block;
+    font-size: 20px;
+    color:aliceblue;
+}
+#disclaimer {
+    margin-bottom: 20px;
+}
+#credits {
+    display: grid;
+    gap:5px 10px;
+    grid-template-columns: auto auto;
+}

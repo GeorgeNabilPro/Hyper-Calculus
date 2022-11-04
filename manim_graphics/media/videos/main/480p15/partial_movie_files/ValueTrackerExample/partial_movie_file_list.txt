@@ -1,0 +1,8 @@
+# This file is used internally by FFMPEG.
+file 'file:D:/University/Math project/calc-light/manim_graphics/media/videos/main/480p15/partial_movie_files/ValueTrackerExample/3163782288_345352296_3156327232.mp4'
+file 'file:D:/University/Math project/calc-light/manim_graphics/media/videos/main/480p15/partial_movie_files/ValueTrackerExample/2201830969_645682970_3668908798.mp4'
+file 'file:D:/University/Math project/calc-light/manim_graphics/media/videos/main/480p15/partial_movie_files/ValueTrackerExample/2201830969_3889159118_311188810.mp4'
+file 'file:D:/University/Math project/calc-light/manim_graphics/media/videos/main/480p15/partial_movie_files/ValueTrackerExample/2201830969_645682970_2349209918.mp4'
+file 'file:D:/University/Math project/calc-light/manim_graphics/media/videos/main/480p15/partial_movie_files/ValueTrackerExample/2201830969_3942422248_1165594428.mp4'
+file 'file:D:/University/Math project/calc-light/manim_graphics/media/videos/main/480p15/partial_movie_files/ValueTrackerExample/2201830969_322154357_1825226315.mp4'
+file 'file:D:/University/Math project/calc-light/manim_graphics/media/videos/main/480p15/partial_movie_files/ValueTrackerExample/2201830969_645682970_108901159.mp4'

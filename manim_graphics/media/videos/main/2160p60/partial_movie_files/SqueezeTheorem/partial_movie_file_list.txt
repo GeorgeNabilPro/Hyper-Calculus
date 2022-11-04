@@ -1,0 +1,4 @@
+# This file is used internally by FFMPEG.
+file 'file:D:/University/Math project/calc-light/manim_graphics/media/videos/main/2160p60/partial_movie_files/SqueezeTheorem/3215718966_2526496290_507830079.mp4'
+file 'file:D:/University/Math project/calc-light/manim_graphics/media/videos/main/2160p60/partial_movie_files/SqueezeTheorem/1370976784_948775707_1864251307.mp4'
+file 'file:D:/University/Math project/calc-light/manim_graphics/media/videos/main/2160p60/partial_movie_files/SqueezeTheorem/1370976784_645682970_2355023756.mp4'

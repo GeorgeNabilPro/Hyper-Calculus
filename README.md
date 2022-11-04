@@ -1,2 +1,2 @@
-# Hyper-Calculus
-Your ultimate reference for integral calculus
+# calc-light
+A website about calculus and especially integral calculus

@@ -1,0 +1,92 @@
+.MathJax:not([display]){
+    padding:0 4px 4px 4px;
+    background-color: rgb(214, 214, 214);
+    border-radius: 3px;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+.c .MathJax:not([display]){
+    background-color: rgba(223, 223, 223, 0.338);
+}
+.MathJax{
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.math-table {
+    border-radius: 10px;
+    border-collapse: collapse;
+    margin: 25px auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+.math-table .MathJax {
+    display: inline-block;
+    background-color: transparent;
+
+}
+.math-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.math-table th,
+.math-table td {
+    padding: 6px;
+}
+.math-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+.math-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+.math-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+
+.theorem {
+    background-color: var(--theorem-bg);
+    border-left:4px solid var(--theorem-bo);
+}
+.theorem .title{
+    background-color: var(--theorem-h);
+}
+.note {
+    background-color: var(--note-bg);
+    border-left:4px solid var(--note-bo);
+}
+.note .title{
+    background-color: var(--note-h);
+}
+.example {
+    background-color: var(--example-bg);
+    border-left:4px solid var(--example-bo);
+}
+.example .title{
+    background-color: var(--example-h);
+}
+.stratigy {
+    background-color: var(--stratigy-bg);
+    border-left:4px solid var(--stratigy-bo);
+}
+.stratigy .title{
+    background-color: var(--stratigy-h);
+}
+.proof {
+    background-color: var(--theorem-bg);
+    border-left:4px solid var(--theorem-bo);
+}
+.proof .title{
+    background-color: var(--theorem-h);
+}
+.further {
+    background-color: var(--theorem-bg);
+    border-left:4px solid var(--theorem-bo);
+}
+.further .title{
+    background-color: var(--theorem-h);
+}
