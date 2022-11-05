@@ -12,12 +12,13 @@ import {
     Route,
     Routes,
     Navigate,
-    BrowserRouter as Router
+    BrowserRouter as Router,
+    HashRouter,
 } from 'react-router-dom'
 
 function App(props){
     return(
-        <Router>
+        <HashRouter>
             <Header />
             <main>
                 <Routes>
@@ -30,7 +31,7 @@ function App(props){
                 </Routes>
             </main>
             <Footer />
-        </Router>
+        </HashRouter>
     )
 }
 
