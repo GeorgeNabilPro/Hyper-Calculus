@@ -21,7 +21,7 @@ function App(props){
             <Header />
             <main>
                 <Routes>
-                    <Route path='/Hyper-Calculus/' element={<Navigate to="/multiple-integration"/>} />
+                    <Route path='/Hyper-Calculus/' element={<Navigate to="/Hyper-Calculus/multiple-integration"/>} />
                     <Route path='/Hyper-Calculus/background-and-basics' element={<Basics />} />
                     <Route path='/Hyper-Calculus/techniques-of-integration' element={<Techniques />} />
                     <Route path='/Hyper-Calculus/multiple-integration' element={<MultipleInt />} />
