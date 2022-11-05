@@ -21,12 +21,12 @@ function App(props){
             <Header />
             <main>
                 <Routes>
-                    <Route path='/' element={<Navigate to="/multiple-integration"/>} />
-                    <Route path='/background-and-basics' element={<Basics />} />
-                    <Route path='/techniques-of-integration' element={<Techniques />} />
-                    <Route path='/multiple-integration' element={<MultipleInt />} />
-                    <Route path='/applications-of-integration' element={<Applications />} />
-                    <Route path='/vector-calculus' element={<VectorInt />} />
+                    <Route path='/Hyper-Calculus/' element={<Navigate to="/multiple-integration"/>} />
+                    <Route path='/Hyper-Calculus/background-and-basics' element={<Basics />} />
+                    <Route path='/Hyper-Calculus/techniques-of-integration' element={<Techniques />} />
+                    <Route path='/Hyper-Calculus/multiple-integration' element={<MultipleInt />} />
+                    <Route path='/Hyper-Calculus/applications-of-integration' element={<Applications />} />
+                    <Route path='/Hyper-Calculus/vector-calculus' element={<VectorInt />} />
                 </Routes>
             </main>
             <Footer />
