@@ -46,6 +46,10 @@
 .math-table tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
 }
+.left-aligned-math mjx-container[jax="CHTML"][display="true"] {
+    text-align: left;
+}
+
 
 
 .theorem {

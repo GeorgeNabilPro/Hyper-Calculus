@@ -103,7 +103,7 @@ function Basics () {
             \\end{aligned}
             `}
             <video width="100%" height="auto" controls >
-                <source src="./assets/videos/SqueezeTheorem.mp4" type="video/mp4"/>
+                <source src={require("./assets/videos/SqueezeTheorem.mp4")} type="video/mp4"/>
             </video>
         </C>
         <C t='t' h="L'Hôpital's rule">

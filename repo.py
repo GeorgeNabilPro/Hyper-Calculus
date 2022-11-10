@@ -1,8 +1,27 @@
 import matplotlib.pyplot as plt
 import datetime
 
-initial = open(r'.\src\App.js', 'r',encoding='utf-8').read() + open(r'.\src\Components.js', 'r',encoding='utf-8').read()+ open(r'.\src\global.css', 'r',encoding='utf-8').read()
+files = {
+  r'.\src\App.js',
+  r'.\src\Components.js',
+  r'.\src\Basics.js',
+  r'.\src\Applications.js',
+  r'.\src\MultipleInt.js',
+  r'.\src\VectorInt.js',
+  r'.\src\Techniques.js',
+  r'.\src\global.css',
+  r'.\src\math.css',
+  r'.\src\solo.css',
+}
 f= open('repo.html', 'r',encoding='utf-8').read()
+lines = 0
+initial = ""
+for file in files:
+  content = open(file, 'r',encoding='utf-8').read()
+  initial += content
+  for char in content:
+    if char == "\n":
+      lines += 1
 
 records = [
   272416,
@@ -26,8 +45,9 @@ plt.plot_date(dates_data[:len(records)], records, linestyle ='solid')
 plt.tight_layout()
 #plt.show()
 print(len(initial))
-print(len(f))
-print('auto created code percent = ' , (len(f)/len(initial) * 100))
+print(lines)
+""" print(len(f)) """
+""" print('auto created code percent = ' , (len(f)/len(initial) * 100)) """
 #  1406.69 %
 #  3207.72 %
 #  1610.18 %

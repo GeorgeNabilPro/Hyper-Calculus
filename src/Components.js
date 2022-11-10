@@ -33,7 +33,7 @@ const S = (props)=> {
     return (
         <div className="section2">
             <h4><span>&#8811; </span> {props.h}</h4>
-            <MathJax hideUntilTypeset='every'>
+            <MathJax hideUntilTypeset='first'>
                 {props.children}
             </MathJax>
         </div>
@@ -70,8 +70,28 @@ function C(props) {
     }
 
     const title = props.h? props.h:'';
+
     return (
         <div className='c-holder'>
+{/*         { props.t !== 'e' ? 
+            <div className={config[1] + ' c'}>
+                <h5 className='title'>
+                    <span>{config[0]}</span>{' ' + title}
+                </h5>
+                <div className="content">
+                    {props.children}
+                </div>
+            </div>
+            : 
+            <div className={config[1] + ' c'}>
+                <h5 className='title'>
+                    <span>{config[0]}</span>{' ' + title}
+                </h5>
+                <div className="content">
+                    {props.children}
+                </div>
+            </div>
+        }  */}
             <div className={config[1] + ' c'}>
                 <h5 className='title'>
                     <span>{config[0]}</span>{' ' + title}
