@@ -83,6 +83,12 @@ export default function MultipleInt (){
         {`$$
         \\iint_D f(r,\\theta)r\\mathrm{d}r\\mathrm{d}\\theta=\\int_\\alpha^\\beta \\left(\\int_{h_1 (\\theta)}^{h_2 (\\theta)} f(r,\\theta)r\\mathrm{d}r \\right)\\mathrm{d}\\theta.
         $$`}
+        <C t="s" h="Convert double integral to polar coordinates">
+            To convert a double integral from cartesian coordinates to polar coordinates:
+            <ul>
+                
+            </ul>
+        </C>
         </S>
     </SM>
     <SM h="Tripple integration">

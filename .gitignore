@@ -10,6 +10,7 @@
 
 # production
 /build
+/manim_graphics
 
 # misc
 .DS_Store
