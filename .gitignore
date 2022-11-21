@@ -11,6 +11,9 @@
 # production
 /build
 /manim_graphics
+/helpers
+/media
+/manim_prod
 
 # misc
 .DS_Store

@@ -13,9 +13,9 @@ a {
     --active-gr:rgb(136, 255, 156);
     --hover-gr:rgb(185, 253, 196);
 
-    --theorem-bg:hsl(160, 100%, 93%);
-    --theorem-h :hsl(160, 100%, 85%);
-    --theorem-bo:hsl(160, 100%, 70%);
+    --theorem-bg:hsl(180, 100%, 93%);
+    --theorem-h :hsl(180, 100%, 85%);
+    --theorem-bo:hsl(180, 100%, 70%);
 
     --note-bg:hsl(58, 100%, 93%);
     --note-h :hsl(58, 100%, 85%);
@@ -28,12 +28,29 @@ a {
     --stratigy-bg:hsl(25, 100%, 93%);
     --stratigy-h :hsl(25, 100%, 85%);
     --stratigy-bo:hsl(25, 100%, 70%);
+
+    --further-bg:hsl(358, 100%, 93%);
+    --further-h :hsl(358, 100%, 85%);
+    --further-bo:hsl(358, 100%, 70%);
 }
 @font-face {
     font-family: Recoleta;
-    src: url("./assets/Recoleta Font/recoleta-regulardemo.otf") format("opentype");
+    src: url("../assets/Recoleta Font/recoleta-regulardemo.otf") format("opentype");
 }
 
+hr{
+    -webkit-text-size-adjust: 100%;
+    font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgb(255, 0, 0)!important;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px auto;
+}
 
 /* Containers and Content- Styling*/
 .chapter, .section1, .section2{
@@ -77,8 +94,16 @@ ol {
     padding: 8px 18px 10px 18px;
 }
 .content hr{
-    width: 50%;
-    margin:8px auto 2px auto;
+    width: 80%;
+}
+.img_wrapper{
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+.content img{
+    width: 80%;
+    border-radius: 5px;
 }
 
 

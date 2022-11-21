@@ -1,13 +1,13 @@
 .MathJax:not([display]){
-    padding:0 4px 4px 4px;
-    background-color: rgb(214, 214, 214);
-    border-radius: 3px;
+/*     padding:0 4px 4px 4px;
+    background-color: rgb(228, 228, 228);
+    border-radius: 3px; */
     white-space: pre-wrap;
     overflow-wrap: break-word;
 }
-.c .MathJax:not([display]){
+/* .c .MathJax:not([display]){
     background-color: rgba(223, 223, 223, 0.338);
-}
+} */
 .MathJax{
     overflow-x: auto;
     overflow-y: hidden;
@@ -88,9 +88,16 @@
     background-color: var(--theorem-h);
 }
 .further {
-    background-color: var(--theorem-bg);
-    border-left:4px solid var(--theorem-bo);
+    background-color: var(--further-bg);
+    border-left:4px solid var(--further-bo);
 }
 .further .title{
-    background-color: var(--theorem-h);
+    background-color: var(--further-h);
+}
+.rule {
+    background-color: var(--further-bg);
+    border-left:4px solid var(--further-bo);
+}
+.rule .title{
+    background-color: var(--further-h);
 }

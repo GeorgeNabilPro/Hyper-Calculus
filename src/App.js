@@ -1,11 +1,12 @@
-import './global.css'
-import './math.css'
-import './solo.css'
-import Basics from './Basics'
-import Techniques from './Techniques'
-import Applications from './Applications'
-import MultipleInt from './MultipleInt'
-import VectorInt from './VectorInt'
+import './styles/global.css'
+import './styles/math.css'
+import './styles/solo.css'
+import Basics from './pages/Basics'
+import Techniques from './pages/Techniques'
+import Applications from './pages/Applications'
+import MultipleInt from './pages/MultipleInt'
+import VectorInt from './pages/VectorInt'
+import NotFound from './pages/NotFound'
 import { Header, Footer} from './Components'
 
 import {
@@ -28,6 +29,7 @@ function App(props){
                     <Route path='/multiple-integration' element={<MultipleInt />} />
                     <Route path='/applications-of-integration' element={<Applications />} />
                     <Route path='/vector-calculus' element={<VectorInt />} />
+                    <Route path='*' element={<NotFound />} />
                 </Routes>
             </main>
             <Footer />

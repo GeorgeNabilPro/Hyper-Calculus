@@ -2,17 +2,27 @@ import React from 'react'
 import { useState } from 'react'
 import {MathJaxContext, MathJax} from 'better-react-mathjax'
 import {Link} from 'react-router-dom'
+const PATH1 = '../assets/manim/'
+const PATH2 = '../assets/'
+/*
+t --> title
+h --> header
+p --> path
+*/
+
 
 function Chapter(props) {
     return (
         <>
             <div className={'main n'+ props.n}>
+                <h2>
+                    <span className='before'>{props.n}</span>
+                    {props.name}
+                </h2>
                 <MathJaxContext config={CONFIG}>
-                        <h2>
-                            <span className='before'>{props.n}</span>
-                            {props.name}
-                        </h2>
-                        {props.children}
+                <MathJax hideUntilTypeset='first'>
+                    {props.children}
+                </MathJax>
                 </MathJaxContext>
             </div>
             <Navigation choose={props.n}/>
@@ -33,9 +43,9 @@ const S = (props)=> {
     return (
         <div className="section2">
             <h4><span>&#8811; </span> {props.h}</h4>
-            <MathJax hideUntilTypeset='first'>
+            
                 {props.children}
-            </MathJax>
+
         </div>
     )
 }
@@ -50,7 +60,7 @@ function C(props) {
             config = ['Example:', 'example']
             break
         case 's':
-            config = ['Problem solving stratigy:', 'stratigy']
+            config = ['Solving stratigy:', 'stratigy']
             break
         case 'n':
             config = ['Notes', 'note']
@@ -118,6 +128,13 @@ const A = (props) => {
         <a href={'#' + props.r} className="local-reference">
             {props.children}
         </a>
+    )
+}
+
+const Mimg = (props) => {
+    let path = props.t === 'g'?  PATH2 + props.p : PATH1 + props.p 
+    return (
+        <img src={require(path)}/>
     )
 }
 
@@ -211,14 +228,17 @@ const Navigation = (props) => {
 }
 
 const CONFIG = {
-    svg: {
-      fontCache: 'global'
-    },
-    extensions: ["tex2jax.js", "TeX/AMSmath.js"],
     jax: ["input/TeX","output/SVG"],/*, "output/PreviewHTML"*/
+    extensions: ["tex2jax.js", "TeX/AMSmath.js","mml2jax.js","MathEvents.js"],
+/*     SVG: {
+        fontCache: 'global',
+        mtextFontInherit: true,
+        blacker: 1,
+        linebreaks: { automatic: true }
+    },
     loader: { 
         load: ['input/tex-base', 'output/svg', '[tex]/require', '[tex]/mathtools'] //, 'ui/menu'
-    },
+    }, */
     tex: {
       inlineMath: [["$", "$"],['"','"']],
       displayMath: [["$$", "$$"]],
@@ -236,7 +256,22 @@ const CONFIG = {
         availableFonts: ["STIX","TeX"],  
     }
 };
+/*
+
+  menuSettings: {
+  zoom: "Click"
+  },
+  MatchWebFonts: {
+  matchFor: {
+    SVG: true
+  },
+  fontCheckDelay: 500,
+  fontCheckTimeout: 15 * 1000
+  },
+  messageStyle: "none"
+  });
+*/
 
 export {
-    S, SM, Chapter, C, A, CONFIG, U1,
+    S, SM, Chapter, C, A, CONFIG, U1, Mimg,
     Header, Footer, Navigation}

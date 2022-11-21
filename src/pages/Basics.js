@@ -1,6 +1,6 @@
 import React from 'react'
 import {MathJaxContext} from 'better-react-mathjax'
-import {SM, S, C, U1, A, CONFIG, Chapter} from './Components'
+import {SM, S, C, U1, A, CONFIG, Chapter} from '../Components'
 import {Link} from 'react-router-dom'
 
 
@@ -103,7 +103,7 @@ function Basics () {
             \\end{aligned}
             `}
             <video width="100%" height="auto" controls >
-                <source src={require("./assets/videos/SqueezeTheorem.mp4")} type="video/mp4"/>
+                <source src={require("../assets/videos/SqueezeTheorem.mp4")} type="video/mp4"/>
             </video>
         </C>
         <C t='t' h="L'Hôpital's rule">
