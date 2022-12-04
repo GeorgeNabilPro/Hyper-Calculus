@@ -1,5 +1,5 @@
 # Hyper-Calculus
-It's a wbsite that provides math explainatories and visualizations that aims to get bigger and cover larger range of mathematics.
+It's a wbsite that provides math explanations and visualizations in calculus field, With the main goal of making calculus easier to study and to build a repository for calculus topics that makes it easier to find solutions to calculus problems. The project aims to get bigger and cover larger range of mathematics.
 
 ## Dependencies
  At this moment the project is made mainly using `React.js`
