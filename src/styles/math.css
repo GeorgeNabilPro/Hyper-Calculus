@@ -95,9 +95,9 @@
     background-color: var(--further-h);
 }
 .rule {
-    background-color: var(--further-bg);
-    border-left:4px solid var(--further-bo);
+    background-color: var(--rule-bg);
+    border-left:4px solid var(--rule-bo);
 }
 .rule .title{
-    background-color: var(--further-h);
+    background-color: var(--rule-h);
 }

@@ -8,24 +8,27 @@ export default function MultipleInt (){
 <Chapter n={3} name="Multivariable Calculus">
     <SM h="Double integration">
         <S h="Definition of double integrals">
-            For a function {`"f(x,y)"`} that is integrable over a region {`"R=[a,b]\\times [c,d]"`} in the xy-plane we can calculate the volume between the function and this region using Riemann sum by dividing the rectangle {`"R"`} into small rectangles {`"R_{ij}"`} each one of them has the same width  {`"\\Delta x= \\frac{b-a}{m}"`}  and same height {`"\\Delta y= \\frac{d-c}{n}"`}, and for each small rectangular region {`"R_{ij}"`} let {`"(x_{ij}^*,y_{ij}^* )"`} be any point in this region then,
+            Using the idea of Riemann sum we can get the integral for a function {`"f(x,y)"`} that is integrable over a region {`"R=[a,b]\\times [c,d]"`} in the xy-plane. We can calculate the volume between the function and this region using Riemann sum by dividing the rectangle {`"R"`} into small rectangles {`"R_{ij}"`} each one of them has the same width  {`"\\Delta x= \\frac{b-a}{m}"`}  and same height {`"\\Delta y= \\frac{d-c}{n}"`}, and for each small rectangular region {`"R_{ij}"`} let {`"(x_{ij}^*,y_{ij}^* )"`} be any point in this region then,
             {`$$
                 V=\\lim_{m\\rightarrow \\infty,n\\rightarrow \\infty}{\\sum_{i=1}^m \\sum_{j=1}^n f(x_{ij}^*,y_{ij}^*)}  \\Delta x\\Delta y.
             $$`}
-            Integral notation:
+            Using integral notation we get:
             {`$$
-            \\iint_R f(x,y)\\mathrm{d} A=\\lim_{m\\rightarrow \\infty,n\\rightarrow \\infty}⁡{\\sum_{i=1}^m \\sum_{j=1}^n f(x_{ij}^*,y_{ij}^*)}  \\Delta x\\Delta y.
+            V = \\iint_R f(x,y)\\mathrm{d} A=\\lim_{m\\rightarrow \\infty,n\\rightarrow \\infty}⁡{\\sum_{i=1}^m \\sum_{j=1}^n f(x_{ij}^*,y_{ij}^*)}  \\Delta x\\Delta y.
             $$`}
             <C t='n'>
             We can combine {`"\\mathrm{d} x \\mathrm{d} y"`} into {`"\\mathrm{d} A"`} for better notation and general meaning that's because {`"\\mathrm{d} A"`} can be decomposed into different quantities in different coordinate systems. However, when we start solving we decompose {`"\\mathrm{d} A"`} in the way that makes the integral easier to solve.
             </C>
         </S>
         <S h="Properties of double integrals">
+            Assume that the functions "f (x, y)" and "g(x, y)" are integrable over the rectangular region "R"; "S" and "T" are subregions of "R" then:
             <ol className='left-aligned-math'>
                 <li>
+                    The sum "f + g "is integrable and
                     {`$$ \\iint_R {f(x,y)+g(x,y)} \\mathrm{d}A = \\iint_R  f(x,y) \\mathrm{d} A+\\iint_R  g(x,y) \\mathrm{d} A.$$`}
                 </li>
                 <li>
+                    For a constant {`"c \\in \\mathbb{R}"`}, "cf" is integrable and
                     {`$$ \\iint_R cf(x,y) \\mathrm{d} A = c\\cdot \\iint_R  f(x,y) \\mathrm{d} A. $$`}
                 </li>
                 <li>
@@ -38,7 +41,7 @@ export default function MultipleInt (){
                 $$`}
                 </li>
                 <li>
-                    The integral of a continuous function "f" over the rectangular region {`"R = [a,b] \\times [c,d]"`} equals the iterated integral
+                    Fubini's Theorem:
                     {`
                     $$
                     \\iint_R f(x,y) \\mathrm{d}A = \\int_a^b \\int_c^d f(x,y) \\mathrm{d}y\\mathrm{d}x = \\int_c^d \\int_a^b f(x,y) \\mathrm{d}x\\mathrm{d}y
@@ -58,7 +61,7 @@ export default function MultipleInt (){
                 \\begin{aligned}
                 I &= \\int_{-\\pi}^0 \\int_0^2 x \\sin (y) + 3x^2 y^2 \\mathrm{d}x\\mathrm{d}y \\\\
                   &= \\int_{-\\pi}^0 \\left[ \\frac{x^2}{2} \\sin (y) + x^3 y^2 
-                    \\right]_{0}^{2}  \\mathrm{d}y \\\\
+                    \\right]_{x=0}^{x=2}  \\mathrm{d}y \\\\
                   &= \\int_{-\\pi}^0 2 \\sin (y) + 8 y^2 \\mathrm{d}y \\\\
                   &=   \\left[ -2 \\cos (y) + \\frac{8}{3} y^3 \\right]_{-\\pi}^{0}  \\\\
                   &= -2 -2 - \\frac{8}{3} \\times - \\pi^3 = -4 + \\frac{8 \\pi^3 }{3}.
@@ -99,16 +102,14 @@ export default function MultipleInt (){
                   &= \\frac{-8}{3} + 8 \\times 2 - 2 \\times cos(2) + 2 + 2 \\cdot \\left[\\sin (x) \\right]_0^2 \\\\
                   &= 16.1656 + 2 \\times \\sin (2) \\\\
                   &= 17.9842.
-
                 \\end{aligned}
                 `}
-                {/* <Mimg p='gs3.png'/> */}
                 <div className='img_wrapper'>
                     <img src={require('../assets/manim/gs3.png')} />
                 </div>
             </C>
             <C t='e'>
-
+                Find the integral of the function {`"f(x,y)=6 x^2 + 3 y^2"`} over the region D which is enclosed by the function {`"g_1 (x) = \\sqrt{2x^2 - 3x + 2}"`} and the lines 
             </C>
             <C t='s' h='Changing order of integration'>
                 
@@ -150,7 +151,10 @@ export default function MultipleInt (){
         </S>
     </SM>
     <SM h="Tripple integration">
-        <S h="Definition of tripple integrals"></S>
+        <S h="Definition of tripple integrals in cartesian coordiantes">
+            Using Riemann sum in tripple integrabls might be not intuitive, as we can't visulaize a function of three variables (which will be in 4-D). But, we can extend this method to evaluate tripple integrabls. <br />
+            We define a rectangular box "B" in "R^3" as {`"B= \\{ (x, y, z)|a \\leq x \\leq b, c \\leq y \\leq d, e \\leq z \\leq f \\} ."`} , We divide the interval {`"[a,b]"`} into "l" subintervals {`" [ x_{i-1} , x_i ]"`} of equal length {`" \\Delta x = \\frac{b - a}{l}"`}, divide the interval {`"[c,d]"`} into "m" subintervals {`" [ y_{j-1} , x_j ]"`} of equal length {`" \\Delta y = \\frac{d - c}{m}"`}, and divide the interval {`"[e,f]"`} into "n" subintervals {`" [ z_{k-1} , z_k ]"`} of equal length {`" \\Delta z = \\frac{f - e}{n}"`}.
+        </S>
         <S h="Tripple integrals in different coordinate systems"></S>
         <S h="Tripple integrals over general regions"></S>
     </SM>

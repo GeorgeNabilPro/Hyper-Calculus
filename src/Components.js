@@ -51,7 +51,7 @@ const S = (props)=> {
 }
 
 function C(props) {
-    let config = [/* title, class*/]
+    let config = ['Theorem:', 'theorem']
     switch (props.t){
         case 't':
             config = ['Theorem:', 'theorem']
@@ -146,9 +146,7 @@ const Header = ()=> {
                 Hyper Calculus
             </h1>
             <h3>Your Integral Calculus Reference</h3>
-            <h2>
-                By: Eng. George Nabil
-            </h2>
+
     </header>
     )
 }
@@ -243,7 +241,7 @@ const CONFIG = {
       inlineMath: [["$", "$"],['"','"']],
       displayMath: [["$$", "$$"]],
       // packages: ['amsmath','amssymb','float','base', 'require','ams','mathtools']
-      packages: {'[+]': ['mathtools']},
+      packages: {'[+]': ['mathtools','amssymb']},
     },
     startup: {
       typeset: false

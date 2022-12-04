@@ -29,9 +29,13 @@ a {
     --stratigy-h :hsl(25, 100%, 85%);
     --stratigy-bo:hsl(25, 100%, 70%);
 
-    --further-bg:hsl(358, 100%, 93%);
-    --further-h :hsl(358, 100%, 85%);
-    --further-bo:hsl(358, 100%, 70%);
+    --rule-bg:hsl(358, 100%, 93%);
+    --rule-h :hsl(358, 100%, 85%);
+    --rule-bo:hsl(358, 100%, 70%);
+
+    --further-bg:hsl(278, 100%, 93%);
+    --further-h :hsl(278, 100%, 85%);
+    --further-bo:hsl(278, 100%, 70%);
 }
 @font-face {
     font-family: Recoleta;
@@ -218,6 +222,7 @@ aside {
     align-self: flex-start;
     border-left:5px solid rgb(98, 98, 98);
     z-index: 500;
+    margin-bottom: 100px;
 }
 aside button{
     border: none;
@@ -238,7 +243,6 @@ aside h2 {
 aside ul {
     display: block;
 }
-
 aside li {
     padding:20px 0px 20px 10px;
     list-style: none;

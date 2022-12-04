@@ -2,6 +2,7 @@ import React from 'react'
 import {MathJaxContext} from 'better-react-mathjax'
 import {SM, S, C, U1, A, CONFIG, Chapter} from '../Components'
 import {Link} from 'react-router-dom'
+import Markdown from 'marked-react';
 
 export default function VectorInt (){
     return (
