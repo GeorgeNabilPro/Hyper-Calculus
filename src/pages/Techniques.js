@@ -2,6 +2,7 @@ import React from 'react'
 import {MathJaxContext} from 'better-react-mathjax'
 import {SM, S, C, U1, A, CONFIG, Chapter} from '../Components'
 import {Link} from 'react-router-dom'
+import _ from 'underscore'
 
 function Techniques () {
       return (
@@ -136,7 +137,7 @@ function Techniques () {
                 `}
             </li>
         </U1>
-        <C t="t" h="U-Substitution">
+        <C id={_.uniqueId()} t="t" h="U-Substitution">
             The basic formula for u-substitution
             {`
             \\begin{aligned}

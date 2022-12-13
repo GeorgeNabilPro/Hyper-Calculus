@@ -2,6 +2,7 @@ import React from 'react'
 import {MathJaxContext} from 'better-react-mathjax'
 import {SM, S, C, U1, A, CONFIG, Chapter, Mimg} from '../Components'
 import {Link} from 'react-router-dom'
+import _ from 'underscore'
 
 export default function MultipleInt (){
     return (
@@ -16,7 +17,7 @@ export default function MultipleInt (){
             {`$$
             V = \\iint_R f(x,y)\\mathrm{d} A=\\lim_{m\\rightarrow \\infty,n\\rightarrow \\infty}⁡{\\sum_{i=1}^m \\sum_{j=1}^n f(x_{ij}^*,y_{ij}^*)}  \\Delta x\\Delta y.
             $$`}
-            <C t='n'>
+            <C id={_.uniqueId('c-')} t='n'>
             We can combine {`"\\mathrm{d} x \\mathrm{d} y"`} into {`"\\mathrm{d} A"`} for better notation and general meaning that's because {`"\\mathrm{d} A"`} can be decomposed into different quantities in different coordinate systems. However, when we start solving we decompose {`"\\mathrm{d} A"`} in the way that makes the integral easier to solve.
             </C>
         </S>
@@ -53,7 +54,7 @@ export default function MultipleInt (){
             {`$$
             \\iint_R  f(x,y) \\mathrm{d}A=\\int_a^b \\left(\\int_c^d f(x,y) \\mathrm{d}y \\right)  \\mathrm{d}x.
             $$`}
-            <C t='e'>
+            <C id={_.uniqueId('c-')} t='e'>
                 Calculate the integral
                 {`" \\displaystyle{ \\int_{-\\pi}^0 \\int_0^2 x \\sin (y) + 3x^2 y^2 \\mathrm{d}x\\mathrm{d}y }"`}
                 <hr></hr>
@@ -68,7 +69,7 @@ export default function MultipleInt (){
                 \\end{aligned}
                 `}
             </C>
-            <C t='r' h='Area of a region'>
+            <C id={_.uniqueId('c-')} t='r' h='Area of a region'>
                 The area of a closed bounded plane region D is:
                 {`$$
                 A=\\iint_D  \\mathrm{d}A.
@@ -90,7 +91,7 @@ export default function MultipleInt (){
             {`$$
                 \\iint_D f(x,y)\\mathrm{d} A=\\iint_{D_1} f(x,y)\\mathrm{d} A+\\iint_{D_2} f(x,y)\\mathrm{d} A
             $$`}
-            <C t='e'>
+            <C id={_.uniqueId('c-')} t='e'>
                 Find the area bounded by the function {`"f(x)= -x^2 + 8"`}, the function {`"g(x)= 2 x \\sin (x)"`} and the lines "x = 0, x=2"
                 <hr />
                 Area of a region D = {`"\\iint_D  \\mathrm{d}A."`}
@@ -108,13 +109,16 @@ export default function MultipleInt (){
                     <img src={require('../assets/manim/gs3.png')} />
                 </div>
             </C>
-            <C t='e'>
+            <C id={_.uniqueId('c-')} t='e'>
                 Find the integral of the function {`"f(x,y)=6 x^2 + 3 y^2"`} over the region D which is enclosed by the function {`"g_1 (x) = \\sqrt{2x^2 - 3x + 2}"`} and the lines 
+                <div className='img_wrapper'>
+                    <img src={require('../assets/manim/gs4.png')} />
+                </div>
             </C>
-            <C t='s' h='Changing order of integration'>
+            <C id={_.uniqueId('c-')} t='s' h='Changing order of integration' >
                 
             </C>
-            <C t='e' h=''></C>
+            <C id={_.uniqueId('c-')} t='e' h=''></C>
         </S>
         <S h="Double integrals in polar coordinates">
             To integrate a function {`"f(r,\\theta)"`} over a polar rectangle region {`"R=[a,b]\\times [\\alpha,\\beta ]"`} we divide the interval {`"[a,b]"`} into subintervals {`"\\left[ r_{i-1},r_i \\right]"`} of length {`"\\Delta r=\\frac{b-a}{m}"`} and divide the interval {`"[\\alpha,\\beta ]"`} into subintervals {`"[\\theta_{j-1},\\theta_j ]"`} of width {`"\\Delta \\theta=\\frac{\\beta -\\alpha}{n}"`}, and let {`"(r_{ij}^*,\\theta_{ij}^* )"`} be any point in the small polar rectangle {`"\\left[ r_{i-1},r_i \\right]\\times \\left[ \\theta_{j-1},\\theta_j \\right]"`}, and let {`"r_{ij}^*=\\frac{r_{i-1}+r_i}{2}"`} (the polar rectangle {`"R"`} is divided into small polar rectangles {`"R_{ij}"`} each one has the area of {`"r_{ij}^* \\Delta r\\Delta \\theta"`}). Now the volume between {`"f(r,\\theta)"`} and the polar rectangle {`"R"`} is defined as:
@@ -136,16 +140,16 @@ export default function MultipleInt (){
             {`$$
             \\iint_D f(r,\\theta)r\\mathrm{d}r\\mathrm{d}\\theta=\\int_\\alpha^\\beta \\left(\\int_{h_1 (\\theta)}^{h_2 (\\theta)} f(r,\\theta)r\\mathrm{d}r \\right)\\mathrm{d}\\theta.
             $$`}
-            <C t='e'>
+            <C id={_.uniqueId('c-')} t='e'>
 
             </C>
-            <C t="s" h="Convert double integral to polar coordinates">
+            <C id={_.uniqueId('c-')} t="s" h="Convert double integral to polar coordinates">
                 To convert a double integral from cartesian coordinates to polar coordinates:
                 <ul>
                     
                 </ul>
             </C>
-            <C t='e'>
+            <C id={_.uniqueId('c-')} t='e'>
 
             </C>
         </S>
@@ -153,15 +157,71 @@ export default function MultipleInt (){
     <SM h="Tripple integration">
         <S h="Definition of tripple integrals in cartesian coordiantes">
             Using Riemann sum in tripple integrabls might be not intuitive, as we can't visulaize a function of three variables (which will be in 4-D). But, we can extend this method to evaluate tripple integrabls. <br />
-            We define a rectangular box "B" in "R^3" as {`"B= \\{ (x, y, z)|a \\leq x \\leq b, c \\leq y \\leq d, e \\leq z \\leq f \\} ."`} , We divide the interval {`"[a,b]"`} into "l" subintervals {`" [ x_{i-1} , x_i ]"`} of equal length {`" \\Delta x = \\frac{b - a}{l}"`}, divide the interval {`"[c,d]"`} into "m" subintervals {`" [ y_{j-1} , x_j ]"`} of equal length {`" \\Delta y = \\frac{d - c}{m}"`}, and divide the interval {`"[e,f]"`} into "n" subintervals {`" [ z_{k-1} , z_k ]"`} of equal length {`" \\Delta z = \\frac{f - e}{n}"`}.
+            We define a rectangular box "B" in "R^3" as {`"B= \\{ (x, y, z)|a \\leq x \\leq b, c \\leq y \\leq d, e \\leq z \\leq f \\} ."`} , We divide the interval {`"[a,b]"`} into "l" subintervals {`" [ x_{i-1} , x_i ]"`} of equal length {`" \\Delta x = \\frac{b - a}{l}"`}, divide the interval {`"[c,d]"`} into "m" subintervals {`" [ y_{j-1} , x_j ]"`} of equal length {`" \\Delta y = \\frac{d - c}{m}"`}, and divide the interval {`"[e,f]"`} into "n" subintervals {`" [ z_{k-1} , z_k ]"`} of equal length {`" \\Delta z = \\frac{f - e}{n}"`}. Then the box "B" is divided into subboxes {`"B_{ijk} = [x_{i-1}, x_{i}] \\times [ y_{j-1} , x_j ] \\times [ z_{k-1} , z_k ]"`} and for each "i", "j" and "k" if we consider a point {`" \\left( x_{ijk}^{*},y_{ijk}^{*},z_{ijk}^{*}  \\right) "`}. then from the tripple Riemann sum 
+            {`
+            $$
+            {\\sum_{i=1}^l \\sum_{j=1}^m \\sum_{k=1}^n f\\left( x_{ijk}^{*},y_{ijk}^{*},z_{ijk}^{*}  \\right) }  \\Delta x\\Delta y\\Delta z
+            $$
+            `}
+            We define the triple integral in terms of the limit of a triple Riemann sum (as we did for the double integral in terms of a double Riemann sum).
+            {`
+            $$
+            \\iiint_B f(x,y,z) \\mathrm{d}V = \\lim_{l,m,n \\to \\infty} {\\sum_{i=1}^l \\sum_{j=1}^m \\sum_{k=1}^n f\\left( x_{ijk}^{*},y_{ijk}^{*},z_{ijk}^{*}  \\right) }  \\Delta x\\Delta y\\Delta z
+            $$
+            `}
+            <C id={_.uniqueId('c-')} t='t' h="Fubin's theorem for triple integrals">
+                If "f(x,y,z)" is continuous on the box {`"B = [a,b] \\times [c,d] \\times [e,f]"`} then:
+                {`$$
+                \\iiint_B f(x,y,z) \\mathrm{d}V = \\int_a^b \\int_c^d \\ int_e^f f(x,y,z) \\mathrm{d}z\\mathrm{d}y\\mathrm{d}x
+                $$`}
+            </C>
+            <C id={_.uniqueId('c-')} t='n'>
+                Here the order of this iterated integral doesn't matter as long as the region of integration is a box, e.g.
+                {`$$
+                \\int_a^b \\int_c^d \\int_e^f f(x,y,z) \\mathrm{d}z\\mathrm{d}y\\mathrm{d}x = 
+                \\int_a^b \\int_e^f \\int_c^d f(x,y,z) \\mathrm{d}y\\mathrm{d}z\\mathrm{d}x = 
+                \\int_e^f \\int_a^b \\int_c^d f(x,y,z) \\mathrm{d}y\\mathrm{d}x\\mathrm{d}z = \\dots
+                $$`}
+            </C>
+            <C id={_.uniqueId('c-')} t="e">
+            </C>
         </S>
-        <S h="Tripple integrals in different coordinate systems"></S>
-        <S h="Tripple integrals over general regions"></S>
+        <S h="Tripple integrals over general regions">
+            <C id={_.uniqueId('c-')} t="t" h="Tripple integrals over general regions">
+                The triple integral of a continuous function "f(x,y,z)" over the general region {`"E = \\{ 
+                (x,y) \\in D | g(x,y) \\leq z \\leq h(x,y) 
+                \\}"`} in "R^3", is:
+                {`
+                $$
+                \\iiint_E f(x,y,z) \\mathrm{d}V = \\iint_D \\left[ \\int_{g(x,y)}^{h(x,y)}  \\mathrm{d}z \\right] \\mathrm{d} A
+                $$
+                `}
+                Where "D" is the projection of "E" on the "xy"-plane.
+            </C>
+            <C id={_.uniqueId('c-')} t="e">
+            </C>
+            <C id={_.uniqueId('c-')} t='s' h="Changing order of integration in tirpple integrals">
+
+            </C>
+        </S>
+        <S h="Tripple integrals in different coordinate systems">
+            <C id={_.uniqueId('c-')} t='t' h="Tripple integrals in cylindrical coordinates"></C>
+            <C id={_.uniqueId('c-')} t='t' h="Tripple integrals in spherecal coordinates"></C>
+        </S>
     </SM>
     <SM h="General multiple integration">
         <S h='Change of variables in multiple integrals'></S>
         <S h="Generalization of multiple integrals"></S>
-        <S h="Iterated integrals"></S>
+        <S h="Iterated integrals">
+            <C id={_.uniqueId('c-')} t='t' h="Cauchy formula for repeated integration">
+            Let "f" be a continuous function on the real line. Then the nth repeated integral of "f" with basepoint "a"
+            {`$$ f^{(-n)}(x)=\\int _{a}^{x}\\int _{a}^{\\sigma _{1}}\\cdots \\int _{a}^{\\sigma _{n-1}}f(\\sigma _{n})\\,\\mathrm {d} \\sigma _{n}\\cdots \\,\\mathrm {d} \\sigma _{2}\\,\\mathrm {d} \\sigma _{1}, $$`}
+            is given by single integration
+            {`$$
+            f^{(-n)}(x)={\\frac {1}{(n-1)!}}\\int _{a}^{x}\\left(x-t\\right)^{n-1}f(t)\\,\\mathrm {d} t.
+            $$`}
+            </C>
+        </S>
     </SM>
 </Chapter>
     )

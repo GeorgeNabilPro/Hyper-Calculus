@@ -1,13 +1,11 @@
 import './styles/global.css'
-import './styles/math.css'
-import './styles/solo.css'
 import Basics from './pages/Basics'
 import Techniques from './pages/Techniques'
 import Applications from './pages/Applications'
 import MultipleInt from './pages/MultipleInt'
 import VectorInt from './pages/VectorInt'
 import NotFound from './pages/NotFound'
-import { Header, Footer} from './Components'
+import { Header, Footer} from './SoloComponents'
 
 import {
     Route,
@@ -23,12 +21,12 @@ function App(props){
             <Header />
             <main>
                 <Routes>
-                    <Route path='/' element={<Navigate to="/multiple-integration"/>} />
-                    <Route path='/background-and-basics' element={<Basics />} />
-                    <Route path='/techniques-of-integration' element={<Techniques />} />
-                    <Route path='/multiple-integration' element={<MultipleInt />} />
-                    <Route path='/applications-of-integration' element={<Applications />} />
-                    <Route path='/vector-calculus' element={<VectorInt />} />
+                    <Route path='/' element={<Navigate to="/multiple-integration/"/>} />
+                    <Route path='/background-and-basics/' element={<Basics />} />
+                    <Route path='/techniques-of-integration/' element={<Techniques />} />
+                    <Route path='/multiple-integration/' element={<MultipleInt />} />
+                    <Route path='/applications-of-integration/' element={<Applications />} />
+                    <Route path='/vector-calculus/' element={<VectorInt />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
             </main>
