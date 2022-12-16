@@ -1,0 +1,56 @@
+النهايات هو أهم مفهوم في علم التفاضل و التكاكل لأنه بيمثل الأساس اللي العلم ده أتبني عليه. و عشان نفهم كويس المقصود من  &rdquo;نهاية الدالة عند كذا&ldquo; لازم الأول نتفق علي بعض المفاهيم الأساسية
+        <U1>
+            <li>نهاية الدالة مش معناها رقم محدد أنت بتحاول توصله.</li>
+            <li>نهاية الدالة عند قيمة معينة تقدر تعتبرها مجرد تقدير "Estimation" للدالة عند قيمة تقريبية للقيمة اللي أنت عايز تجيب نهاية الدالة عمدها</li>
+            <li>تقدر تقول أن النهاية هي محاولة الوصول و ليس الوصول في حد ذاته</li>
+            <li>و تقدر تقول كمان إن النهاية هي قيمة تقديرية مبنية علي مستوي الدقة</li>
+            <li>معني كدة إن النهايية بتتكون من حاجتين: هامش خطأ و مستوي معين من الدقة</li>
+            <li>مستوي الدقة هو المدخلات للدالة و الناتج هو رقم يقع في هامش الخطأ</li>
+        </U1>
+        فلو انت مثلا بتجيب نهاية الدالة "f(x)" عند قيمة معينة "a" فتخيل أنك جايب ميكروسكوب و بتكبر في خط الأعداد ف لقيت قيم أصغر من "a" في قمت محرك الميكروسكوب يمين شوية و كبرت كمان و فضلت تحرط الميكروسكوب و تكبر لغاية ما وصلت لمستوي معين من الدقة (التكبير) بعدها قمت متحرك لفوق (مثلاً) و شوفت الدالة تقريباً بتساوي كام عند القيمة التقريبية اللي أنت أخترتها
+
+            <S h="What are limits" className="ar">
+        Limits are the most import concept when it comes to calculus, that's because limits as concept is the 
+        base that calculus is built on. And to understand intuitively what are limits, we first should clarify 
+        these points:
+        <U1>
+{/*             <li>Limits of functions is not a theory, it's a concept and it's better to think of it as a point of view</li> */}
+            <li>It's better to see limits as the attempt of reaching a value not a way to reach this value 
+            directly.</li>
+            <li>A limit of a function doesn't mean a specific number we want to obtain. rather, we can 
+            consider a limit of a function at some value as an estimation for the function at some value very 
+            close to the initial value we want to take the limit at.</li>
+            <li>A limit of a function is an estimation built on some level of accuracy, and by increasing the 
+            level of accuracy we get more and more correct values, But that doesn't mean we will get the most 
+            correct results.</li>
+            <li>In other words, we give the function a value in some range that contains the initial value and get an output within a very small error margin</li>
+            <li>When we say {`"\\lim_{x \\rightarrow a}{f(x)} = L"`}, here "L" doesn't necessarily be in range of "f" </li>
+        </U1>
+        Now we are ready to formulate the definition of limits.<br />
+        For a function "f(x)"
+        
+        <C t='d'>
+            <strong>The mathematical definition of limits</strong> for a function f(x) 
+            {`$$
+            \\lim_{x \\rightarrow a}{f(x)} = L \\coloneqq 
+            \\forall \\epsilon \\gt 0 ,\\exists \\delta \\gt 0 \\text{ s.t. } 0 \\lt |x-a| \\lt \\delta 
+            \\implies |f(x)- L | \\lt \\epsilon
+        $$`}
+        </C>
+
+    </S>
+    <S h="Requirements to learn calculus">
+        Before you learn calculus you should first learn good amount of algebra, geometry and trigonometry.
+        It's preferred to take pre-algebra and trigonometry courses. also you should have a good understanding of geometry (euclidean and analytic geometry)
+    </S>
+
+128175  100 percent
+128213  red book
+128214  openned book
+128215  green book
+128580  emoji look upwards
+128640  rocket
+128681  red flag
+128550 
+128577  sad emoji
+128578  smiling emoji
