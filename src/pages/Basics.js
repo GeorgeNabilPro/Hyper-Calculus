@@ -1,7 +1,8 @@
 import React from 'react'
 import {MathJaxContext} from 'better-react-mathjax'
-import {SM, S, C, U1, A, CONFIG, Chapter} from '../Components'
+import {SM, S, C, U1, A, CONFIG, Chapter, Mvid} from '../Components'
 import {Link} from 'react-router-dom'
+import _ from 'underscore'
 
 
 function Basics () {
@@ -17,7 +18,7 @@ function Basics () {
         & \\lim_{x \\rightarrow a}{c} = c \\\\
         \\end{align}
         `}
-        <C t="t" h="Limits laws">
+        <C id={_.uniqueId()} t="t" h="Limits laws">
         Let "f(x)" and "g(x)" be defined for all {`"x \\neq a"`} over some open interval containing "a". Assume that "L" and "M" are realnumbers such that {`"\\lim_{x \\rightarrow a}{f(x)} = L"`} and {`"\\lim_{x \\rightarrow a}{g(x)} = M"`} Let "c" be a constant. Then, each of the following statements holds:
         {`
         \\begin{align}
@@ -51,7 +52,7 @@ function Basics () {
         `}
     </S>
     <S h="Solving limits problems">
-        <C t='s' h='Substitution methods'>
+        <C id={_.uniqueId()} t='s' h='Substitution methods'>
         If we have a function of the form "f(g(x))" we can simplify it by substitute "g(x)" with new variable as following:
         {`
         \\begin{aligned}
@@ -67,7 +68,7 @@ function Basics () {
         \\end{aligned}
         `}
         </C>
-        <C t='e' h='Substitution method for limits'>
+        <C id={_.uniqueId()} t='e' h='Substitution method for limits'>
             Evaluate the limit {`"\\lim_{x \\to 0}{\\frac{\\sin^{-1} x}{x}}"`}<br/>
             <hr></hr>
             Substitute for "x" with {`"\\sin y"`} and take the limit where "y" approaches {`"\\sin 0 = 0"`}
@@ -80,17 +81,17 @@ function Basics () {
             \\end{aligned}
             `}
         </C>
-        <C t='s' h="Using logarithmic and exponential functions in limits">
+        <C id={_.uniqueId()} t='s' h="Using logarithmic and exponential functions in limits">
             We can use the identity
             {`$$ \\lim_{x \\to c}{f(g(x))} =  f \\left( \\lim_{x \\to c}{g(x)} \\right) $$`}
         </C>
-        <C t='t' h='The squeeze theorem'>
+        <C id={_.uniqueId()} t='t' h='The squeeze theorem'>
             Suppose {`"f(c) \\le g(x) \\le h(x)"`} for every "x" in an open interval containing "a", except possibly at "a" if:
             {`$$ \\lim_{x \\to a}f(x) = \\lim_{x \\to a}h(x) = L $$`}
             then:
             {`$$ \\lim_{x \\to a}g(x) = L $$`}
         </C>
-        <C t="e" h="Using the squeeze theorem">
+        <C id={_.uniqueId()} t="e" h="Using the squeeze theorem">
             Evaluate the limit {`"\\lim_{x \\to 0}{x^2 \\sin (\\frac{1}{x})}"`}<br/>
             <hr></hr>
             {`
@@ -102,17 +103,15 @@ function Basics () {
             & \\therefore \\lim_{x \\to 0}{x^2 \\sin (\\frac{1}{x})} = 0 && \\text{using squeeze theorem.}
             \\end{aligned}
             `}
-            <video width="100%" height="auto" controls >
-                <source src={require("../assets/videos/SqueezeTheorem.mp4")} type="video/mp4"/>
-            </video>
+            <Mvid p="SqueezeTheorem.mp4"/>
         </C>
-        <C t='t' h="L'Hôpital's rule">
+        <C id={_.uniqueId()} t='t' h="L'Hôpital's rule">
             for functions "f" and "g" which are differentiable on an open interval "I" except possibly at a point "c" contained in "I", if {`$ \\lim_{x \\to c} f(x) = \\lim_{x \\to c} g(x) = 0 $`} or {`$ \\lim_{x \\to c} f(x) = \\lim_{x \\to c} g(x) = \\infty $`} then:
             {`$$
             \\lim _{x\\to c}{\\frac {f(x)}{g(x)}}=\\lim _{x\\to c}{\\frac {f'(x)}{g'(x)}}.
             $$`}
         </C>
-        <C t='s' h="Solving limits problems">
+        <C id={_.uniqueId()} t='s' h="Solving limits problems">
             To find and evaluate the limit {`"{\\displaystyle \\lim _{x\\to c}{f(x)}} "`} you should first use the limit laws and substitute directly for "x" with "c" and evaluate the function. If you get a value then this is the evaluation of the limit, If you get an Indeterminate Form ({`"\\frac{0}{0} , \\frac{\\infty}{\\infty} , 0 \\cdot \\infty , \\infty - \\infty , 0^0 , \\infty ^0 , 1^\\infty"`}) then:
             <ol>
                 <li>
@@ -144,7 +143,7 @@ function Basics () {
         A set of points {`$P=\\{x_i  \\forall i\\in\\{0,1,2,3,\\dots,n\\}\\}$`} with {`$a=x_0<x_1<x_2<⋯<x_n=b$`} which divides the interval {`$[a,b]$`} into subintervals {`$[x_0,x_1 ],[x_1,x_2 ],⋯,[x_(n-1),x_n ]$`} is called a partition of {`$[a,b]$`} and if the subintervals all have the same width then it is called a regular partition
     </S>
     <S h="Riemann sum">
-      <C t="t" h="Riemann sum">
+      <C id={_.uniqueId()} t="t" h="Riemann sum">
       Let {`$f(x)$`} be defined on {`"[a,b]"`}, {`"P"`} be a regular partition of {`"[a,b]"`} divides it into n subintervals, ∆x be width of each subinterval {`"[x_{(i-1)},x_i ]"`} and for each {`"i"`} let {`"x_i^*"`} be any point in  {`"[x_{(i-1)},x_i ]"`} a Riemann sum is defined for {`"f(x)"`} as:
       {`$$\\sum_{i=1}^{n}{f\\left(x_i^* \\right) \\Delta x}$$`}
       the area under the curve of {`"f(x)"`} on {`"[a,b]"`} is given by:
@@ -167,7 +166,7 @@ function Basics () {
     </S>
     <S h="Integrability">
     a function is called integrable over {`"[a,b]"`} if its integral over this interval is finite. Or we can say (equivalently) a function is called integrable over {`"[a,b]"`} if it hasn't any discontinuities over this interval except for jump and removable discontinuities.
-    <C t='n'>
+    <C id={_.uniqueId()} t='n'>
         If {`"f(x)"`} is continuous on {`"[a,b]"`} then, {`"f"`} is integrable over {`"[a,b]"`}.
         A function is called integrable if it is itegrable over its domain.
     </C>
@@ -192,7 +191,7 @@ function Basics () {
     </U1>
     </S>
     <S h="Net change theorem">
-        <C t="s">
+        <C id={_.uniqueId()} t="s">
         the new value of a changing quantity equals the initial value plus the integral of the rate of change
         {`$$ F(b)=F(a)+\\int_a^b {F\\prime (x)  dx)}.$$`}
         </C>

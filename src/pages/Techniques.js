@@ -192,11 +192,12 @@ function Techniques () {
     <S h="Weierstrass substitution">
         {
             `$$
-            \\sin x={\\frac {2t}{1+t^{2}}},\\qquad \\cos x={\\frac {1-t^{2}}{1+t^{2}}},\\qquad {\\text{and}}\\qquad dx={\\frac {2}{1+t^{2}}}\\,dt $$
-
-            `}{`
-            $$
-            \\begin{aligned}&amp;\\sinh x={\\frac {2t}{1-t^{2}}},\\qquad \\cosh x={\\frac {1+t^{2}}{1-t^{2}}},\\qquad \\tanh x={\\frac {2t}{1+t^{2}}},\\\\[6pt]&amp;\\coth x={\\frac {1+t^{2}}{2t}},\\qquad \\operatorname {sech} x={\\frac {1-t^{2}}{1+t^{2}}},\\qquad \\operatorname {csch} x={\\frac {1-t^{2}}{2t}},\\\\[6pt]&amp;{\\text{and}}\\qquad dx={\\frac {2}{1-t^{2}}}\\,dt.\\end{aligned}
+            \\begin{aligned}
+            & \\sin x={\\frac {2t}{1+t^{2}}},\\qquad \\cos x={\\frac {1-t^{2}}{1+t^{2}}},\\qquad {\\text{and}}\\qquad dx={\\frac {2}{1+t^{2}}}\\,dt \\\\
+            & \\sinh x = \\frac {2t}{1-t^{2}},\\qquad \\cosh x = \\frac {1+t^{2}}{1-t^{2}},\\qquad \\tanh x = \\frac {2t}{1+t^{2}},\\\\
+            & \\coth x={\\frac {1+t^{2}}{2t}},\\qquad \\operatorname{sech} x={\\frac {1-t^{2}}{1+t^{2}}},\\qquad \\operatorname {csch} x={\\frac {1-t^{2}}{2t}},\\\\
+            & {\\text{and}} \\qquad dx={\\frac {2}{1-t^{2}}}\\,dt.
+            \\end{aligned}
             $$
             `
         }

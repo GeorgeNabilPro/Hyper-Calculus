@@ -1,0 +1,36 @@
+@mixin flex ($justify: center, $align:center, $wrap:wrap){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: row;
+    flex-wrap: $wrap;
+}
+/*Colors*/
+$dark-green: rgb(4, 47, 54);
+$prime-green: #12a156;
+$prime-blue: #04ccff;
+$sec-green: #8cedab;
+$sec-green-light:#c2fdd4;
+$sec-green-trans:#8cedab7b;
+$sec-blue: #7df9ee;
+$black: #162418;
+$colors: (
+    "theorem":hsl(180, 100%, 70%),
+    "note":hsl(58, 100%, 70%),
+    "example":hsl(122, 100%, 70%),
+    "stratigy":hsl(25, 100%, 70%),
+    "rule":hsl(358, 100%, 70%),
+    "further":hsl(278, 100%, 70%),
+);
+/*Gradients*/
+$numbering-gradient: linear-gradient(45deg, #1ea348 0%, #08b1a3 100%);
+/*Fonts*/
+$header-font:700 2.6rem Recoleta;
+$header-font-sec:700 1.2rem Recoleta;
+$heading1-font:1.5rem Sabon ;
+$content-font:  1rem 'Noto Sans', sans-serif;
+$content-bold-font: 700 1.1rem 'Noto Sans', sans-serif ;
+$content-italic-font:  italic 300 1.1rem 'Noto Sans', sans-serif;
+/*lengthes*/
+$border-radius: 5px;
+$nav-height:40px;

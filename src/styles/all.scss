@@ -1,0 +1,17 @@
+@font-face {
+    font-family: Recoleta;
+    src: url("../assets/fonts/Recoleta Font/recoleta-regulardemo.otf") format("opentype");
+}
+@font-face {
+    font-family: Sabon;
+    src: url("../assets/fonts/Sabon-Font/Sabon_Roman.ttf") format("truetype");
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,300&display=swap');
+
+
+@import 'sass/links';
+@import 'sass/math';
+@import 'sass/pure';
+@import 'sass/solo';
+@import 'sass/content';
+

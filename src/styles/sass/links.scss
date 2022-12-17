@@ -1,0 +1,21 @@
+@import "global";
+.local-reference{
+    padding: 3px;
+    color: rgb(43, 43, 43);
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.5s all;
+    border-radius: 3px;
+    ::after{
+        content: " \1F644";
+    }
+    :hover{
+        background-color: $sec-green-light;
+    }
+    :visited{
+        color: rgb(43, 43, 43);
+    }
+    :active{
+        background-color: $sec-green;
+    }
+}

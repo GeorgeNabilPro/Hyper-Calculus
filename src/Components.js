@@ -2,13 +2,14 @@ import React from 'react'
 import $ from 'jquery'
 import _ from 'underscore'
 
-import {useEffect, useMemo, useState, useId } from 'react'
+import {useEffect, useMemo, useState, useId ,Suspense} from 'react'
 import {MathJaxContext, MathJax} from 'better-react-mathjax'
 import {Link, useLocation, matchRoutes} from 'react-router-dom'
 import {HashLink} from 'react-router-hash-link'
 
-const PATH1 = '../assets/manim/'
-const PATH2 = '../assets/'
+const PATH1 = './assets/manim/'
+const PATH2 = './assets/'
+const PATH3 = './assets/videos/'
 const cTypes = {
     't': ['Theorem', 'theorem'],
     'e': ['Example', 'example'],
@@ -20,12 +21,20 @@ const cTypes = {
     'further' : ['Further knowledge', 'further'],
 }
 
-function Chapter(props) {
+const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -50; 
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
+}
+
+export function Chapter(props) {
+    window.n = props.n
+    useEffect(()=>{window.n = props.n},[props.n])
     let preContentNav = <ContentNav sm={props.children}/>
     return (
         <>
             {preContentNav}
-            <div className={'main n'+ props.n}>
+            <div className={'content-wrapper n'+ props.n}>
                 <h2>
                     <span className='before'>{props.n}</span>
                     {props.name}
@@ -36,12 +45,12 @@ function Chapter(props) {
                 </MathJax>
                 </MathJaxContext>
             </div>
-            <Navigation choose={props.n}/>
+            {/* <Navigation choose={props.n}/> */}
         </>
     )
 }
 
-const SM = (props)=> {
+export const SM = (props)=> {
     // Takes < 
     //      h:header  !! , !UNIQUE, 
     const id = props.h.toLowerCase().replaceAll(' ','_')
@@ -53,7 +62,7 @@ const SM = (props)=> {
     )
 }
 
-const S = (props)=> {
+export const S = (props)=> {
     // Takes < 
     //      h:header  !! , !UNIQUE,
     const id = props.h.toLowerCase().replaceAll(' ','_')
@@ -65,7 +74,7 @@ const S = (props)=> {
     )
 }
 
-class C extends React.Component {
+export class C extends React.Component {
     // Takes < 
     //    h:title             #= ""
     //    id:id               !!, !UNIQUE
@@ -97,8 +106,7 @@ class C extends React.Component {
     }
 }
 
-
-const U1 = (props)=> {
+export const U1 = (props)=> {
     return (
         <ul className='list1'>
             {props.children}
@@ -106,7 +114,7 @@ const U1 = (props)=> {
     )
 }
 
-const A = (props) => {
+export const A = (props) => {
     // Takes < 
     //      r:route {1,2,3,4,5}           #= 3, 
     //          1: /background-and-basics'
@@ -123,28 +131,51 @@ const A = (props) => {
     )
 }
 
-const Mimg = (props) => {
+export const Mimg = (props) => {
     // Takes < 
     //      h:title, caption  #= "", 
-    //      t:type {'g',''}   #= "",
+    //      t:path type {'g',''}   #= "",
     //          'g': To take source from assets directory (PATH2)
     //          '' : To take source from assets/manim directory (PATH1)
     //      p:path            !!,
-    let path = props.t === 'g'?  PATH2 + props.p : PATH1 + props.p 
+    //      alt: alternative text in case of missed image  #="",
+    const path = props.t === 'g'?  PATH2 + props.p : PATH1 + props.p;
+    const alt = props.alt? props.alt: "";
     return (
-        <figure>
-            <img src={require(path)}/>
+        <figure className='img-wrapper'>
+            <Suspense fallback={<Loading />}>
+                <img src={require('' + path)} alt={alt}/> {/*Here we added '' so we don't get "can't fine module" error*/}
+            </Suspense>
             <figcaption>{props.h}</figcaption>
         </figure>
     )
 }
 
-const ContentNav = (props) => {
+export const Mvid = (props) => {
+     // Takes < 
+    //      h:title, caption  #= "", 
+    //      p:path            !!,
+    //      e:extension       #= "video/mp4",
+    const path = PATH3 + props.p
+    const extension = props.e? props.e : "video/mp4"
+    return( <div className='video-wrapper'>
+        <Suspense fallback={<Loading />}>
+            <video width="100%" height="auto" controls >
+                <source src={require(""+path)} type={extension}/>
+            </video>
+            <p className='vid-disc'>
+                {props.h}
+            </p>
+        </Suspense>
+    </div>)
+}
+
+export const ContentNav = (props) => {
     // Takes <
     //    sm:main sections list     !AUTO
     const location = useLocation().pathname;
     const SMElements = props.sm;
-    let order = {'r':0, 't':0, 's':0, 'n':0, 'p':0, 'e':0, 'd':0, 'further':0};
+    let order = {'r':0, 't':0, 's':0, 'n':0, 'p':0, 'e':0, 'd':0};
 
     let ordered_ = useMemo(()=>{
         let nKey = 0
@@ -155,7 +186,7 @@ const ContentNav = (props) => {
             let id = el.props.h.toLowerCase().replaceAll(' ','_')
             ordered.push(
                 <li className={'content-main-section'} key={nKey}>
-                    <HashLink smooth to={`#${id}`}>
+                    <HashLink smooth to={`#${id}`} scroll={el => scrollWithOffset(el)}>
                         {el.props.h}
                     </HashLink>
                 </li>
@@ -172,12 +203,12 @@ const ContentNav = (props) => {
 
             for (let child1 of elChildren) {
                 // Here each child1 is a S component
-                if (child1.props) {
+                if (child1.props && child1.type.name === 'S') {
                     nKey ++;
                     let id = child1.props.h.toLowerCase().replaceAll(' ','_')
                     ordered.push(
                         <li className={'content-section'} key={nKey}>
-                            <HashLink smooth to={`#${id}`}>
+                            <HashLink smooth to={`#${id}`} scroll={el => scrollWithOffset(el)}>
                                 {child1.props.h}
                             </HashLink>
                         </li>
@@ -196,16 +227,25 @@ const ContentNav = (props) => {
                         // Here each child2 is a C component
                         if (child2.props) {
                             let type = child2.props.t;
-                            if (type) {
+                            if (type && type !== 'further') {
                                 order[type] ++; nKey ++;
                                 ordered.push(
                                     <li className={`content-container`} key={'c' + child2.props.id}>
-                                        <HashLink smooth to={`#${child2.props.id}`}>
+                                        <HashLink smooth to={`#${child2.props.id}`} scroll={el => scrollWithOffset(el)}>
                                             {cTypes[type][0]}, {order[type]}
                                         </HashLink>
                                     </li>
                                 )
-                            } 
+                            } else if (type) {
+                                nKey ++;
+                                ordered.push(
+                                    <li className={`content-container`} key={'c' + child2.props.id}>
+                                        <HashLink smooth to={`#${child2.props.id}`} scroll={el => scrollWithOffset(el)}>
+                                            {cTypes[type][0]}
+                                        </HashLink>
+                                    </li>
+                                )
+                            }
                         } 
                     }
                 } 
@@ -222,53 +262,7 @@ const ContentNav = (props) => {
     )
 }
 
-const Navigation = (props) => {
-    // Takes <
-    //    choose:the tab which is activated at the moment  !AUTO
-    const c = props.choose
-    const [isActive, setIsActive] = useState(false);
-
-    const handleClick = event => {
-        setIsActive(current => !current);
-    };
-    return (
-    <aside>
-        <div>
-            <button  onClick={handleClick}>Topics</button>
-            <h2>Hyper Calculus</h2>
-        </div>
-        <ul className={isActive ? '' : 'hidden'}>
-            <li className={c == 1 ?'highlighted': ''}>
-                <Link to='/background-and-basics' >
-                    Background and Basics
-                </Link>
-            </li>
-            <li className={c == 2 ?'highlighted': ''}>
-                <Link to='/techniques-of-integration' >
-                    Techniques of Integration
-                </Link>
-            </li>
-            <li className={c == 3 ?'highlighted': ''}>
-                <Link to='/multiple-integration' >
-                    Multiple Integration
-                </Link>
-            </li>
-            <li className={c == 4 ?'highlighted': ''}>
-                <Link to='/applications-of-integration' >
-                    Applications of Integration
-                </Link>
-            </li>
-            <li className={c == 5 ?'highlighted': ''}>
-                <Link to='/vector-calculus' >
-                    Vector Calculus
-                </Link>
-            </li>
-        </ul>
-    </aside>
-    )
-}
-
-const CONFIG = {
+export const CONFIG = {
     // The MathJax configuration block
     jax: ["input/TeX","output/SVG"],/*, "output/PreviewHTML"*/
     extensions: ["tex2jax.js", "TeX/AMSmath.js","mml2jax.js","MathEvents.js"],
@@ -290,7 +284,11 @@ const CONFIG = {
     }
 };
 
-export {
-    S, SM, Chapter, C, A, CONFIG, U1, Mimg,
-    Navigation, ContentNav
+export const Loading = ()=>{
+    return (
+        <div className="loading-screen">
+            <div className='loading-spinner' />
+        </div>
+    )
 }
+

@@ -1,0 +1,58 @@
+@import 'global';
+@each $name, $color in $colors {
+    .#{$name} {
+        background-color: adjust-color($color, $lightness:23);
+        border-left:4px solid $color;
+        .title {
+            background-color: adjust-color($color, $lightness:15);
+        }
+    }
+}
+
+.MathJax:not([display]){
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+
+.MathJax{
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.math-table-container{
+    overflow-x: auto;
+}
+
+.math-table {
+    border-collapse: collapse;
+    margin: 1.5rem auto;
+    font:$content-bold-font;
+    min-width: 400px;
+    box-shadow: 0 0 $border-radius rgba(0, 0, 0, 0.15);
+    border-radius: $border-radius;
+    .MathJax {
+        display: inline-block;
+        background-color: transparent;
+        overflow-x:hidden;
+    }
+    thead tr {
+        background-color: #009879;
+        color: white;
+        text-align: left;
+    }
+    th, td {
+        padding: 0.5rem 1rem;
+    }
+    tbody{
+        tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+    } 
+}
+
+.left-aligned-math mjx-container[jax="CHTML"][display="true"] {
+    text-align: left;
+}

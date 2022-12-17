@@ -105,15 +105,11 @@ export default function MultipleInt (){
                   &= 17.9842.
                 \\end{aligned}
                 `}
-                <div className='img_wrapper'>
-                    <img src={require('../assets/manim/gs3.png')} />
-                </div>
+                <Mimg p="gs3.png"/>
             </C>
             <C id={_.uniqueId('c-')} t='e'>
                 Find the integral of the function {`"f(x,y)=6 x^2 + 3 y^2"`} over the region D which is enclosed by the function {`"g_1 (x) = \\sqrt{2x^2 - 3x + 2}"`} and the lines 
-                <div className='img_wrapper'>
-                    <img src={require('../assets/manim/gs4.png')} />
-                </div>
+                <Mimg p="gs4.png"/>
             </C>
             <C id={_.uniqueId('c-')} t='s' h='Changing order of integration' >
                 

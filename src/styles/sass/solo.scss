@@ -1,0 +1,213 @@
+@import 'global';
+header {
+    height: fit-content;
+    overflow: visible;
+}
+.header-upper {
+    @include flex($justify:center);
+    height: 96px;
+    width:100%;
+    padding:16px 48px;
+    background-color: $dark-green;
+}
+.logo-wrapper {
+    @include flex($wrap:nowrap);
+}
+#logo {
+    color:white;
+    font: $header-font;
+    padding-right: 1rem;
+}
+#slogan {
+    border-left: 4px solid $sec-green;
+    color:white;
+    width:188px;
+    font:$header-font-sec;
+    padding-left: 1rem;
+    @media screen and (max-width: 1020px) {
+        display: none;
+    }
+}
+#about-tab {
+    color:white;
+    font: 700 18px 'Noto Sans', sans-serif ;
+    border:1px white solid;
+    border-radius: $border-radius;
+    padding:0.25rem 0.5rem;
+    margin-left:8rem;
+    &:hover {
+        background-color: white;
+        color:$dark-green;
+    }
+    @media screen and (max-width: 1020px) {
+        display: none;
+    }
+}
+nav {
+    height: $nav-height;
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 2px 4px 0px rgb(149, 149, 149);
+    background-color: $sec-green-trans;
+    @media screen and (max-width: 1020px) {
+        &.extended{
+            height: 70vh
+        }
+    }
+}
+#toggle-btn {
+    @include flex();
+    height: $nav-height;
+    margin: 0 0 0 4rem;
+    background-color: transparent;
+    border:none;
+    font: 700 18px 'Noto Sans', sans-serif ;
+    svg {
+        width:2rem;
+        height: 2rem;
+        margin-right: 0.5rem;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+    @media screen and (min-width: 1020px) {
+        display: none;
+    }
+    @media screen and (max-width: 1020px) {
+        display: flex;
+    }
+}
+.tabs {
+    @include flex($wrap:nowrap);
+    height: $nav-height;
+    width: 100%;
+    list-style: none;
+    overflow: hidden;
+    li {
+        align-self: stretch;
+        position: relative;
+    }
+    .highlighted a{
+        border-bottom: 3px solid $sec-green;
+    }
+    a {
+        @include flex($wrap:nowrap);
+        height:100%;
+        margin-inline: 0.5rem;
+        font: 700 16px 'Noto Sans', sans-serif ;
+        text-decoration: none;
+        color:$black;
+        border-color: $sec-green;
+        &:hover{
+            border-bottom: 3px solid $sec-green;
+        }
+        &:active{
+            background-color: $sec-green;
+        }
+        @media  screen and (min-width: 1440px) {
+            margin-inline: 1rem;
+        }
+    }
+    @media screen and (max-width: 1020px) {
+        display: none;
+        &.extended {
+            display: block;
+            height: 70vh;
+            width: 100%;
+            li {
+                margin:1rem 0;
+            }
+            a {
+                &:hover, &:active{
+                    border:none;
+                    background-color: $sec-green;
+                }
+            }
+        }
+    }
+} 
+#disclaimer {
+    margin-bottom: 20px;
+}
+#credits {
+    display: grid;
+    gap:5px 10px;
+    grid-template-columns: auto auto;
+}
+
+footer{
+    @include flex(space-around, flex-start);
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    font-size: 1rem;
+    color:aliceblue;
+    background-color: $dark-green;
+    padding: 30px 20px;
+    a {
+        padding-left:0.5rem;
+        color:$prime-blue;
+    }
+}
+
+.contents-menu{
+    position: -webkit-sticky;
+    position: sticky;
+    top:$nav-height;
+    min-width: 13rem;
+    width:184px;
+    height: calc(100vh - 40px);
+    padding:1rem 0.5rem 2rem 1.5rem;
+    overflow-y: scroll;
+    border-left:none;
+    z-index: 500;
+    ul {
+        list-style: none;
+    }
+    li {
+        width:100%;
+        margin: 5px 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .content-main-section {
+        font-size: 1rem;
+        margin-left: 0;
+        font-weight:bolder;
+        a:hover, a:active {
+            color: $prime-blue;
+        }
+    }
+    .content-section {
+        font-size: 1rem;
+        margin-left: 8px;
+        a:hover, a:active {
+            color: $prime-blue;
+        }
+    }
+    .content-container{
+        ::before{
+            content: '\25B6';
+            margin-right:8px;
+        }
+        a{
+            font-size: 14px;
+            margin-left: 16px;
+            font-weight: normal;
+            &:hover, a:active {
+                color: $prime-green;
+            }
+        }
+    }
+    @media screen and (max-width: 1020px) {
+        display: none;
+        &.extended {
+            z-index: 980;
+            display: fixed;
+            top: $nav-height;
+            width:60%;
+            min-width: 200px;
+        }
+    }
+}

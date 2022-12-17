@@ -1,0 +1,38 @@
+/*Colors*/
+/*Gradients*/
+/*Fonts*/
+/*lengthes*/
+hr {
+  line-height: 1.5;
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 20px auto; }
+
+main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: unset;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  min-height: 60vh;
+  top: 136px; }
+
+ol {
+  margin-left: 1.5rem; }
+
+*, ::after, ::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.2s; }
+
+a {
+  color: #162418;
+  text-decoration: none; }
+
+@media screen and (max-width: 880px) {
+  html {
+    font-size: 14px; } }
