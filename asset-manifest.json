@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Hyper-Calculus/static/css/main.8e01ece1.css",
-    "main.js": "/Hyper-Calculus/static/js/main.33b14769.js",
+    "main.css": "/Hyper-Calculus/static/css/main.15766221.css",
+    "main.js": "/Hyper-Calculus/static/js/main.2f19e6aa.js",
     "static/js/787.dba6f2d1.chunk.js": "/Hyper-Calculus/static/js/787.dba6f2d1.chunk.js",
     "static/media/SqueezeTheorem.mp4": "/Hyper-Calculus/static/media/SqueezeTheorem.fae703c46718fd2855a0.mp4",
     "static/media/recoleta-regulardemo.otf": "/Hyper-Calculus/static/media/recoleta-regulardemo.fd9bfd35d1085b5c6511.otf",
@@ -18,12 +18,12 @@
     "static/media/License free.txt": "/Hyper-Calculus/static/media/License free.16a293d5d0170f7b83cd.txt",
     "static/media/License premium.txt": "/Hyper-Calculus/static/media/License premium.536f4a45984288d72df7.txt",
     "index.html": "/Hyper-Calculus/index.html",
-    "main.8e01ece1.css.map": "/Hyper-Calculus/static/css/main.8e01ece1.css.map",
-    "main.33b14769.js.map": "/Hyper-Calculus/static/js/main.33b14769.js.map",
+    "main.15766221.css.map": "/Hyper-Calculus/static/css/main.15766221.css.map",
+    "main.2f19e6aa.js.map": "/Hyper-Calculus/static/js/main.2f19e6aa.js.map",
     "787.dba6f2d1.chunk.js.map": "/Hyper-Calculus/static/js/787.dba6f2d1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8e01ece1.css",
-    "static/js/main.33b14769.js"
+    "static/css/main.15766221.css",
+    "static/js/main.2f19e6aa.js"
   ]
 }
