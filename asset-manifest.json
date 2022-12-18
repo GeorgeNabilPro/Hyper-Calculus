@@ -1,13 +1,10 @@
 {
   "files": {
-    "main.css": "/Hyper-Calculus/static/css/main.1aa49ba7.css",
-    "main.js": "/Hyper-Calculus/static/js/main.45f19408.js",
+    "main.css": "/Hyper-Calculus/static/css/main.9bcaa618.css",
+    "main.js": "/Hyper-Calculus/static/js/main.b6780f1e.js",
     "static/js/787.dba6f2d1.chunk.js": "/Hyper-Calculus/static/js/787.dba6f2d1.chunk.js",
     "static/media/SqueezeTheorem.mp4": "/Hyper-Calculus/static/media/SqueezeTheorem.fae703c46718fd2855a0.mp4",
-    "static/media/3797699.jpg": "/Hyper-Calculus/static/media/3797699.8a07ba12a920d41fc3ee.jpg",
     "static/media/recoleta-regulardemo.otf": "/Hyper-Calculus/static/media/recoleta-regulardemo.fd9bfd35d1085b5c6511.otf",
-    "static/media/3797699.webp": "/Hyper-Calculus/static/media/3797699.a533b8cc2d80c85e2ef5.webp",
-    "static/media/main_header_img.svg": "/Hyper-Calculus/static/media/main_header_img.1df03cc19e0abd829a3a.svg",
     "static/media/gs4.png": "/Hyper-Calculus/static/media/gs4.86f618af39e26f833577.png",
     "static/media/gs3.png": "/Hyper-Calculus/static/media/gs3.152ed6f9dc7ab9f59b43.png",
     "static/media/Sabon_CE_Bold.ttf": "/Hyper-Calculus/static/media/Sabon_CE_Bold.2cf4167d218378292280.ttf",
@@ -21,12 +18,12 @@
     "static/media/License free.txt": "/Hyper-Calculus/static/media/License free.16a293d5d0170f7b83cd.txt",
     "static/media/License premium.txt": "/Hyper-Calculus/static/media/License premium.536f4a45984288d72df7.txt",
     "index.html": "/Hyper-Calculus/index.html",
-    "main.1aa49ba7.css.map": "/Hyper-Calculus/static/css/main.1aa49ba7.css.map",
-    "main.45f19408.js.map": "/Hyper-Calculus/static/js/main.45f19408.js.map",
+    "main.9bcaa618.css.map": "/Hyper-Calculus/static/css/main.9bcaa618.css.map",
+    "main.b6780f1e.js.map": "/Hyper-Calculus/static/js/main.b6780f1e.js.map",
     "787.dba6f2d1.chunk.js.map": "/Hyper-Calculus/static/js/787.dba6f2d1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1aa49ba7.css",
-    "static/js/main.45f19408.js"
+    "static/css/main.9bcaa618.css",
+    "static/js/main.b6780f1e.js"
   ]
 }
